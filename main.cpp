@@ -81,6 +81,9 @@ int main() {
     int entrenamiento [VUELTAS+1]= {0};
     int vueltaACargar =  1;
     int tiempoDeVuelta = 0;
+    int largoVuelta = 0;
+
+    leer("Ingrese la distancia de la Vuelta Completa: ",largoVuelta);
 
     system("cls");
 
