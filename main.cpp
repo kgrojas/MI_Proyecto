@@ -39,6 +39,22 @@ void calcularTiempo (int &valor1, char &mitadSuperior, char &mitadInferior, int 
     mitadSuperior=valor1/dividendo;
     mitadInferior=valor1%dividendo;
 }
+
+int calcTiempoReduc(int tMax, int tMin){
+    int minTMax, segTMax, minTMin, segTMin, segTMaxTotal, segTMinTotal;
+    float tiempoReduc;
+
+    minTMax = tMax / 100;
+    segTMax = tMax % 100;
+    minTMin = tMin / 100;
+    segTMin = tMin % 100;
+
+    segTMaxTotal = (minTMax * 60) + segTMax;
+    segTMinTotal = (minTMin * 60) + segTMin;
+    tiempoReduc = segTMaxTotal - segTMinTotal;
+
+    return (tiempoReduc / segTMaxTotal) * 100;
+}
 int cargarDatos (int &vueltaACargar,int tiempoDeVuelta) 
 {   
     int entradasErroneas = 0; 
