@@ -100,7 +100,7 @@ int vueltaLenta(int entrenamiento[],int vueltas){
     }
     return lenta;
 }
-void imprimirRapidayLenta(int rapida, int lenta, int entrenamiento[],int vueltas ){
+void imprimirValores(float porcentaje, int rapida, int lenta, int entrenamiento[],int vueltas ){
     cout << "Vuelta mas rapida: " << endl;
 
     for (int i = 0; i < vueltas; i++){
@@ -114,6 +114,7 @@ void imprimirRapidayLenta(int rapida, int lenta, int entrenamiento[],int vueltas
             cout <<"Vuelta: "<< i<<"  "<< entrenamiento[i]<<" MMSS"<< endl;
         }
     }
+    cout << "El porcentaje de reduccion de tiempo es : " << porcentaje << endl;
 }
 
 int main() {
@@ -141,11 +142,9 @@ int main() {
     }
     int rapida = vueltaRapida(entrenamiento,VUELTAS);
     int lenta = vueltaLenta(entrenamiento, VUELTAS);
-    
-    imprimirRapidayLenta(rapida, lenta, entrenamiento,VUELTAS);
+    float porcentajeReduc = calcTiempoReduc(lenta, rapida);
 
-    
-
+    imprimirValores(porcentajeReduc,rapida, lenta, entrenamiento,VUELTAS);
 
     system ("pause"); 
     return 0;
