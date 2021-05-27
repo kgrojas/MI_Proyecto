@@ -57,8 +57,7 @@ int cargarDatos (int &vueltaACargar,int tiempoDeVuelta)
     while (minutos > 59 || segundos > 59 || tiempoDeVuelta <= 0) {
         entradaErronea(entradasErroneas);
 
-        cout << "Ingrese el tiempo de vuelta "<< vueltaACargar << " en MMSS: ";
-        cin >> tiempoDeVuelta;
+master
         calcularTiempo (tiempoDeVuelta,minutos,segundos,divisor,vueltaACargar);
     }
 
