@@ -55,6 +55,8 @@ int calcTiempoReduc(int tMax, int tMin){
 
     return (tiempoReduc / segTMaxTotal) * 100;
 }
+
+
 int cargarDatos (int &vueltaACargar,int tiempoDeVuelta) 
 {   
     int entradasErroneas = 0; 
