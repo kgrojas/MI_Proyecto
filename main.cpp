@@ -8,6 +8,7 @@
 // (minutos,segundos)
 // También se conoce la extensión de la vuelta expresada en Km, para todas las vueltas es la
 // misma ya que el ciclista realiza los entrenamientos en un circuito cerrado.
+
 #include<stdio.h>
 #include<iostream>
 using namespace std;
