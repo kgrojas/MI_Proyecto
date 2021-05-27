@@ -11,6 +11,7 @@
 #include<stdio.h>
 #include<iostream>
 using namespace std;
+
 #define VUELTAS (20)
 #define KMdeVUELTA (5)//Kilometros
 
@@ -39,13 +40,30 @@ void calcularTiempo (int &valor1, char &mitadSuperior, char &mitadInferior, int 
     mitadSuperior=valor1/dividendo;
     mitadInferior=valor1%dividendo;
 }
+
+int calcTiempoReduc(int tMax, int tMin){
+    int minTMax, segTMax, minTMin, segTMin, segTMaxTotal, segTMinTotal;
+    float tiempoReduc;
+
+    minTMax = tMax / 100;
+    segTMax = tMax % 100;
+    minTMin = tMin / 100;
+    segTMin = tMin % 100;
+
+    segTMaxTotal = (minTMax * 60) + segTMax;
+    segTMinTotal = (minTMin * 60) + segTMin;
+    tiempoReduc = segTMaxTotal - segTMinTotal;
+
+    return (tiempoReduc / segTMaxTotal) * 100;
+}
+
+
 int cargarDatos (int &vueltaACargar,int tiempoDeVuelta) 
 {   
     int entradasErroneas = 0; 
     char minutos  = 0;
     char segundos = 0;
     int divisor = 2;
-    
     while (vueltaACargar < 0 || vueltaACargar > VUELTAS) {
         entradaErronea(entradasErroneas);
         leer(" Ingrese la vuelta a cargar (solo se aceptan valores del 1 al 20) \n Ingre 0 para SALIR: ",
@@ -59,6 +77,7 @@ int cargarDatos (int &vueltaACargar,int tiempoDeVuelta)
         entradaErronea(entradasErroneas);
         calcularTiempo (tiempoDeVuelta,minutos,segundos,divisor,vueltaACargar);
     }
+
     return tiempoDeVuelta;  
 }
 int vueltaRapida(int entrenamiento[],int vueltas){
@@ -70,13 +89,12 @@ int vueltaRapida(int entrenamiento[],int vueltas){
             rapida = entrenamiento[i];
         }
     }
-
     return rapida;  
 }
 int vueltaLenta(int entrenamiento[],int vueltas){
-    int lenta = 9999;    
+    int lenta = 0;    
     for (int i = 1; i < vueltas; i++){
-        if(entrenamiento[i]!=0 && entrenamiento[i] < lenta) {
+        if(entrenamiento[i] > lenta) {
           lenta = entrenamiento[i];
         }
     }
