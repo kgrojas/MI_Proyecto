@@ -45,6 +45,7 @@ int cargarDatos (int &vueltaACargar,int tiempoDeVuelta)
     char minutos  = 0;
     char segundos = 0;
     int divisor = 2;
+    
     while (vueltaACargar < 0 || vueltaACargar > VUELTAS) {
         entradaErronea(entradasErroneas);
         leer(" Ingrese la vuelta a cargar (solo se aceptan valores del 1 al 20) \n Ingre 0 para SALIR: ",
@@ -56,11 +57,8 @@ int cargarDatos (int &vueltaACargar,int tiempoDeVuelta)
     calcularTiempo (tiempoDeVuelta,minutos,segundos,divisor,vueltaACargar);
     while (minutos > 59 || segundos > 59 || tiempoDeVuelta <= 0) {
         entradaErronea(entradasErroneas);
-
-master
         calcularTiempo (tiempoDeVuelta,minutos,segundos,divisor,vueltaACargar);
     }
-
     return tiempoDeVuelta;  
 }
 int vueltaRapida(int entrenamiento[],int vueltas){
