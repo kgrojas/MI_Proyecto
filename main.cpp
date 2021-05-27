@@ -56,8 +56,6 @@ int cargarDatos (int &vueltaACargar,int tiempoDeVuelta)
     calcularTiempo (tiempoDeVuelta,minutos,segundos,divisor,vueltaACargar);
     while (minutos > 59 || segundos > 59 || tiempoDeVuelta <= 0) {
         entradaErronea(entradasErroneas);
-
-master
         calcularTiempo (tiempoDeVuelta,minutos,segundos,divisor,vueltaACargar);
     }
 
