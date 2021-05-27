@@ -70,7 +70,6 @@ int vueltaRapida(int entrenamiento[],int vueltas){
             rapida = entrenamiento[i];
         }
     }
-
     return rapida;  
 }
 int vueltaLenta(int entrenamiento[],int vueltas){
