@@ -11,6 +11,7 @@
 #include<stdio.h>
 #include<iostream>
 using namespace std;
+
 #define VUELTAS (20)
 #define KMdeVUELTA (5)//Kilometros
 
