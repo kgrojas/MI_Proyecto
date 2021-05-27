@@ -76,9 +76,9 @@ int vueltaRapida(int entrenamiento[],int vueltas){
     return rapida;  
 }
 int vueltaLenta(int entrenamiento[],int vueltas){
-    int lenta = 9999;    
+    int lenta = 0;    
     for (int i = 1; i < vueltas; i++){
-        if(entrenamiento[i]!=0 && entrenamiento[i] < lenta) {
+        if(entrenamiento[i] > lenta) {
           lenta = entrenamiento[i];
         }
     }
