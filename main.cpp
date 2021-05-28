@@ -104,13 +104,13 @@ int vueltaLenta(int entrenamiento[],int vueltas){
 void imprimirValores(float porcentaje, int rapida, int lenta, int entrenamiento[],int vueltas ){
     cout << "Vuelta mas rapida: " << endl;
 
-    for (int i = 0; i < vueltas; i++){
+    for (int i = 1; i < vueltas; i++){
         if(entrenamiento[i] == rapida){
             cout <<"Vuelta: "<< i<<"  "<< entrenamiento[i]<<" MMSS"<< endl;
         }
     }
     cout << "Vuelta mas lenta: " << endl;    
-    for (int i = 0; i < vueltas; i++){
+    for (int i = 1; i < vueltas; i++){
         if(entrenamiento[i] == lenta){
             cout <<"Vuelta: "<< i<<"  "<< entrenamiento[i]<<" MMSS"<< endl;
         }
